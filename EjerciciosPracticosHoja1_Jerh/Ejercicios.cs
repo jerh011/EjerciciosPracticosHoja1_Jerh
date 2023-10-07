@@ -131,23 +131,35 @@ namespace EjerciciosPracticosHoja1_Jerh
 
             for (int i = 0; i < array_E6.Length; i++)
             {
-                Console.WriteLine("+----------+---------+------------+");
+                Console.WriteLine("+----------+-------------+------------+");
                 if (array_E6[i] >= 16)
                 {
-                    Console.WriteLine("|{0,-10}| Aprobo  |{1,10}  |", array_E6[i],(array_E6[i]*100/20)*.10);
+                    Console.WriteLine("|{0,-10}| Excelentes  |{1,10}  |", array_E6[i],(array_E6[i]*100/20)*.10);
 
                 }
-                else {
-                    Console.WriteLine("|{0,-10}| Reprobo |{1,10}  |", array_E6[i], (array_E6[i] * 100 / 20)*.10);
+                else if (array_E6[i] >= 11)
+                {
+                    Console.WriteLine("|{0,-10}| Bueno       |{1,10}  |", array_E6[i], (array_E6[i] * 100 / 20)*.10);
+
+
+                }
+                else if (array_E6[i] >= 6)
+                {
+                    Console.WriteLine("|{0,-10}| Regular     |{1,10}  |", array_E6[i], (array_E6[i] * 100 / 20) * .10);
+
+
+                }else
+                {
+                    Console.WriteLine("|{0,-10}| Deficientes |{1,10}  |", array_E6[i], (array_E6[i] * 100 / 20) * .10);
 
 
                 }
 
 
             }
-            Console.WriteLine("+----------+---------+------------+");
+            Console.WriteLine("+----------+-------------+------------+");
         }
 
-        
+
     }
 }
