@@ -15,41 +15,72 @@ for (int i = 0; i < a.Length; i++)
 
 c = ejercicios.Sumas(a,b);
 ejercicios.ImprecionesArray(a,b,c);
-/*
+
 Console.WriteLine("===============================================");
-string[] array_1 = { "Hola", "como","estan","Fasil" };
+string[] array_1 = { "Hola", "como","estan","Fasil","como" };
 int[] array_2 = new int[array_1.Length];
 for (int i = 0;i < array_1.Length;i++)
     Console.WriteLine(array_1[i]);
 Console.WriteLine("Busque el El elemento");
 string Elemento=Console.ReadLine();
 
-array_2=ejercicios.Buscar(Elemento, array_1);
-ejercicios.ImprecionesArra2(array_2);
-*/
+ejercicios.Buscar(Elemento, array_1);
+
+
 Console.WriteLine("===============================================");
-int[,] Alumnos = new int[10,3];
-
-for (int i = 0; i < 10; i++)
+int[] Algebra = {1111,63234,3,8,4,0};
+int[] Analisis ={1111,63234,3,5,7,8};
+int[] JUNTOS=new int[Algebra.Length];
+int X =0;
+for (int j = 0; j < Algebra.Length; j++)
 {
-    for (int j = 0; j < 3; j++)
+    for (int Z = 0; Z < Analisis.Length; Z++)
     {
-        // Generar un número aleatorio entre 0 y 100 y asignarlo a la posición (i, j)
-        Alumnos[i, j] = random.Next(10); // 101 se utiliza para incluir el 100
+        if (Algebra[j] == Analisis[Z]) { 
+        JUNTOS[X] = Analisis[Z];
+        X++;
+        }
     }
 }
+ejercicios.ImprimirMaterias_E3(Algebra, Analisis);
+ejercicios.ImprimirAlumnosComunes_E3(JUNTOS,X);
 
-Console.WriteLine("  Alumnos  |Algebra    |analisis   |");
-    Console.Write("-----------+-----------+-----------+");
-Console.WriteLine(" ");
-for (int i = 0; i < 10; i++)
-{
-    for (int j = 0; j < 3; j++)
+
+Console.WriteLine("===============================================");
+
+
+bool boleano = false;
+
+Console.WriteLine("ingrese el tamaño del areglo");
+int tamañoo=Convert.ToInt32(Console.ReadLine());
+int[] Numeros = new int[tamañoo];
+for (int j = 0; j < Numeros.Length; j++)
+{ 
+    do
     {
-        // Generar un número aleatorio entre 0 y 100 y asignarlo a la posición (i, j)
-        Console.Write("  {0,-9}|",Alumnos[i, j]);  // 101 se utiliza para incluir el 100
-        
-    }
-    Console.WriteLine(" ");
-    Console.WriteLine("-----------+-----------+-----------+");
+        Numeros[j] = random.Next(1, (tamañoo*2));
+        boleano = ejercicios.NumeroRepetido(Numeros, Numeros[j], j);
+    }while (boleano);
 }
+ejercicios.Impresion_E4(Numeros);
+Console.WriteLine("===============================================");
+
+int tamaño_E5 = 0;
+do
+{
+    tamaño_E5 = random.Next(1, 15);
+} while (tamaño_E5%2==0);
+Console.WriteLine($"El tamaño del areglo es: {tamaño_E5}");
+
+ejercicios.LlenarArray_E5(tamaño_E5);
+Console.WriteLine("===============================================");
+
+int[] Array_6=new int[random.Next(1,20)];
+for (int i = 0; i < Array_6.Length; i++)
+{
+    Array_6[i] = random.Next(0, 21);
+}
+ejercicios.Imprimir_E5(Array_6);
+
+
+Console.ReadKey();
